@@ -1,0 +1,36 @@
+<?php
+    if (isset($_SESSION['username'])) {header('location: index');}
+?>
+<!DOCTYPE html lang="en">
+
+<head>
+    <title><?php echo $TITLE . " - Muh Linkz"  ?></title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <?php include "browser.php"; ?>
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
+    <script type="text/javascript" src="./script.js"></script>
+    <!--<script type = "text/javascript" src="paginator.js"></script>
+    <script type = "text/javascript" src="table.js"></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff00aa">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ff00aa">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+</head>
+
+<body>
+    <div class="head">
+        <p class="head"><b>Muh Linkz</b></p>
+    </div>
+    <div
+        style="height:auto;padding: 0; display: flex; flex-flow: row; align-content:center; box-sizing: content-box;max-width:750px;margin:auto;">
+        <div class="cont">
+            <?php echo $CONTENT ?>
+        </div>
+    </div>
+</body>
+
+</html>
