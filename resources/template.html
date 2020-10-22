@@ -1,0 +1,153 @@
+<?php 
+  if (session_id()==null){
+      session_start();
+  }
+    
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login");
+  }
+  
+  echo ("<script>function closeMe(){
+    window.open('', '_self');
+    window.close();
+    }</script>");
+
+  if (isset ($_GET["limit"])){
+    $_SESSION["limit"] = $_GET["limit"];
+  }
+  
+  if (isset ($_GET["sort"])){
+    $_SESSION["sort"] = $_GET["sort"];
+  }
+
+  if (isset ($_GET["order"])){
+    $_SESSION["order"] = $_GET["order"];
+  }
+
+  if ((isset($_GET["limit"])) && (isset($_GET["sort"])) && (isset($_GET["order"]))){
+    echo "<script>closeMe();</script>";
+    echo "close";
+  }
+
+?>
+<!DOCTYPE html lang="en">
+
+<head>
+    <title><?php echo $TITLE . " - Muh Linkz"  ?></title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <?php 
+        include ("serve.php");
+        $conn = new mysqli($servername, $uname, $pwd, $dbname);
+        $fcolor = "";
+        $bcolor = "";
+        // Check connection
+        if ($conn->connect_error) {
+        echo ("<h3 style='color:red;text-align:center;'>Error Connecting to Server</h3>");
+        } else {
+        // Select data from table
+        $sql = "SELECT * FROM theme where username ='" . ($_SESSION['username']) . "' limit 1;";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) == 1){
+            while($row = mysqli_fetch_assoc($result)){
+                $bcolor = $row["backcol"];
+                $fcolor = $row["frontcol"];
+            }
+        } else{
+                $x = 1;
+            }
+        }
+        $conn->close();
+
+        echo "<style>
+        :root {
+        --bg-col: " . $bcolor . ";" .
+        "--fd-col: " . $fcolor . ";" .
+        "}</style>"; ?>
+    <?php include "browser.php"; ?>
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
+    <script type="text/javascript" src="./script.js"></script>
+    <!--<script type = "text/javascript" src="paginator.js"></script>
+    <script type = "text/javascript" src="table.js"></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="<?php echo $fcolor; ?>">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="<?php echo $fcolor; ?>">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--If IE -->
+
+</head>
+
+<body>
+    <div class="head">
+        <?php
+            function endsWith($string, $endString){
+                $len =strlen($endString);
+                if ($len == 0){
+                    return true;
+                }
+                return (substr($string, -$len) == $endString);
+            }
+            if(endsWith($_SESSION['username'], 's')){
+                $username = ($_SESSION['username'] . "'");
+            }
+            else if(!endswith($_SESSION['username'], 's')){
+                $username = ($_SESSION['username'] . "'s");
+            }
+            echo ('<p class="head"><b>'. $username . ' Linkz</b></p>');
+        ?>
+    </div>
+    <div class="body">
+
+        <div class="nav" id="navbar">
+            <?php 
+                if ($TITLE == "Home") { $home = "class = 'pageLink currentPage'";} 
+                else { $home = "class = 'pageLink'";}
+
+                if ($TITLE == "Search Links") { $srch = "class = 'pageLink currentPage'";} 
+                else { $srch = "class = 'pageLink'";}
+
+                if ($TITLE == "Add New Links") { $add = "class = 'pageLink currentPage'";} 
+                else { $add = "class = 'pageLink'";}
+
+                if ($TITLE == "View All Links") { $view = "class = 'pageLink currentPage'";} 
+                else { $view = "class = 'pageLink'";}
+
+                if ($TITLE == "Edit"){
+                    $home = "class = 'pageLink currentPage'";
+                    $view = "class = 'pageLink currentPage'";
+                    $add = "class = 'pageLink currentPage'";
+                    $srch = "class = 'pageLink currentPage'";
+                }
+
+                echo '<a ' . $home . ' id="home" href=".">Home</a>
+                <a ' . $srch . ' id="search" href="search">Search</a>
+                <a ' . $add . ' id="add" href="add">Add</a>
+                <a ' . $view . ' id="viewall" href="viewall">View All</a>'; ?>
+    </div>
+    <div class="content">
+        <?php 
+            echo $CONTENT;
+        ?>
+    </div>
+    </div>
+    <div class="footer">
+        <?php 
+        if ($TITLE == "Profile") { $profile = "class = 'botm currentPage'";} 
+        else { $profile = "class = 'botm'";}
+
+        echo ('<a ' . $profile . ' id="Profile" href="profile">Profile</a>'); 
+        ?>      
+        <a class="botm" id="Log Out" href="?logout=1">Log Out</a>
+    </div>
+    </body>
+
+    </html>
