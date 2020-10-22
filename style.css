@@ -1,0 +1,687 @@
+/* Stylesheet for MuhLinkz */
+
+/* Variables for colors and stuff */
+
+:root {
+    --bg-col: #ff00aa;
+    --fd-col: #c22bfd;
+    --grad: to top;
+    --border-main: #000;
+    --border-second: #fff;
+    --txt-con: #101;
+    --bg-con: #fff;
+    --notif-col: #ff00aa;
+    --even: #929292;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+/* Body stuff */
+
+body {
+    min-width: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 650px;
+    height: auto;
+    min-height: 100%;
+
+}
+html{
+    height: 100%;
+}
+
+body::after{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+html::after{
+    border-bottom: solid white 2px; 
+}
+
+/* Removing annoying default margins, using up available real estate */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    color: white;
+}
+
+/* Contains the navbar and content area, sometimes */
+
+div.body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    height: fit-content;
+}
+
+/* Container for that thing at the top with the text */
+
+div.head {
+    margin: auto;
+    padding: auto;
+    z-index: -1;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* That thing at the top with the text is a header and this is its class */
+
+p.head {
+    padding: 10px;
+    color: var(--fd-col);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 3em;
+    text-align: center;
+    margin: 0px;
+    text-shadow: -1px 1px var(--border-main), 1px -1px var(--border-main), 1px 1px var(--border-main), -1px -1px var(--border-main), 3px 3px var(--border-second);
+}
+
+/* Navbar */
+
+.nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--fd-col);
+    border: solid var(--border-main);
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    margin-top: 1%;
+    padding: 2px;
+}
+
+/* Content class */
+
+div.content {
+    width: 98%;
+    height: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-x:hidden;
+    background-color: var(--bg-con);
+    color: var(--txt-con);
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: solid var(--fd-col);
+    border-radius: 10px;
+    box-shadow: 2px 2px var(--border-main), -2px -2px var(--border-main), -2px 2px var(--border-main), 2px -2px var(--border-main);
+    font-size: 17px;
+    word-wrap: break-word;
+}
+
+/* Content class but for login and registration pages */
+
+div.cont {
+    width: fit-content;
+    min-width: 80%;
+    max-width: 90%;
+    bottom: 30px;
+    height: fit-content;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    justify-self: center;
+    margin: 40px auto 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--bg-con);
+    color: var(--txt-con);
+    padding: 20px;
+    border: solid var(--fd-col);
+    border-radius: 10px;
+    box-shadow: 2px 2px var(--border-main), -2px -2px var(--border-main), -2px 2px var(--border-main), 2px -2px var(--border-main);
+    font-size: 17px;
+    word-wrap: break-word;
+}
+
+.login{
+    width: 100%;
+    padding: 10px;
+    display: block;
+    flex-direction: column;
+}
+
+/* Search result class */
+
+.results {
+    width:  98%;
+    height: min-content;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: solid var(--fd-col);
+    border-radius: 10px;
+    font-size: 17px;
+    word-wrap: break-word;
+}
+
+
+/* Footer Properties */
+
+.footer {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 33px;
+    background-color: var(--fd-col);
+    border: none;
+    border-top: solid var(--border-main);
+    border-bottom: solid var(--border-main);
+    margin: 0;
+    bottom: -3px;
+    padding: 2px;
+}
+
+/* footer button link class */
+
+.botm {
+    background-color: var(--bg-col);
+    border: var(--border-second) solid thin;
+    color: var(--border-second);
+    height: 20px;
+    width: 60px;
+    padding: 1px 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-block;
+    margin: auto 10px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+/* Navbar button link class */
+
+.pageLink {
+    background-color: var(--bg-col);
+    border: solid thin;
+    color: var(--border-second);
+    height: 40px;
+    width: 80px;
+    padding: 10px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 1px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+/* Class of the header/footer link corresponding to the current page */
+
+.currentPage {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    animation-name: link;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Animation to make header/footer link corresponding to the current page blink? */
+
+@keyframes link {
+    0% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    25% {
+        background-color: var(--bg-col);
+        color: var(--border-main);
+        border-color: var(--border-main);
+    }
+    50% {
+        background-color: var(--fd-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    75% {
+        background-color: var(--fd-col);
+        color: var(--border-main);
+        border-color: var(--border-main); 
+    }
+    100% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+}
+
+@-o-keyframes link {
+    0% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    25% {
+        background-color: var(--bg-col);
+        color: var(--border-main);
+        border-color: var(--border-main);
+    }
+    50% {
+        background-color: var(--fd-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    75% {
+        background-color: var(--fd-col);
+        color: var(--border-main);
+        border-color: var(--border-main); 
+    }
+    100% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+}
+
+@-moz-keyframes link {
+    0% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    25% {
+        background-color: var(--bg-col);
+        color: var(--border-main);
+        border-color: var(--border-main);
+    }
+    50% {
+        background-color: var(--fd-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    75% {
+        background-color: var(--fd-col);
+        color: var(--border-main);
+        border-color: var(--border-main); 
+    }
+    100% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+}
+
+@-webkit-keyframes link {
+    0% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    25% {
+        background-color: var(--bg-col);
+        color: var(--border-main);
+        border-color: var(--border-main);
+    }
+    50% {
+        background-color: var(--fd-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+    75% {
+        background-color: var(--fd-col);
+        color: var(--border-main);
+        border-color: var(--border-main); 
+    }
+    100% {
+        background-color: var(--bg-col);
+        color: var(--border-second);
+        border-color: var(--border-second);
+    }
+}
+
+/* Form related properties */
+
+.input-group {
+    margin: 10px 0px 10px 0px;
+}
+
+textarea{
+    border-style: solid 12px var(--txt-con);
+    border-bottom: solid 1.5px;
+    border-right: solid 2px;
+    height: 100px;
+    word-wrap: break-word;
+}
+input[type=text], input[type=url], input[type=password], select, textarea {
+    width: 75%;
+    min-width: 150px;
+    max-width: 320px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--txt-con);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#limitSelect, #sort {
+    min-width: 0;
+    padding:0px;
+    margin: 7px 0;
+}
+
+
+input[type=submit], input[type=reset] {
+    width: 100px;
+    background-color: var(--bg-col);
+    color: var(--bg-con);
+    border: thin solid;
+    border-color: var(--fd-col);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+input[value="search"]{
+    padding:0;
+    width:60px;
+    height:60px;
+    border:solid thin;
+    border-color: var(--fd-col);
+    border-radius:100%;
+}
+
+input[type=color]{
+    width: 30px;
+    height: 30px;
+    padding: -1px;
+    margin: 0px;
+}
+
+.descColumn {
+    color: #929292;
+}
+
+/* Class for making buttons out of hyperlinks */
+
+.but {
+    background-color: var(--bg-col);
+    border: solid thin var(--bg-con);
+    color: var(--bg-con);
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: auto;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+.unify{
+    width: 70px;
+    height: 30px;
+    padding: 7px 0;
+}
+/* For Notification Text */
+
+#notif, #table-notif {
+    color: var(--bg-col);
+    text-align: center;
+}
+
+#table-notif {
+    display: none;
+    visibility: collapse;
+    overflow: hidden;
+}
+
+/* Media Adjustment Properties */
+
+/* For minimum 602px */
+
+@media (min-width:602px) {
+    div.body {
+        flex-direction: row;
+    }
+    div.nav {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0);
+        border: solid var(--border-main);
+        border-left: none;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 300px;
+        width: auto;
+    }
+    .pageLink {
+        border: solid thin;
+        color: var(--border-second);
+        height: 40px;
+        width: 85px;
+        padding: 10px 4px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 10px;
+        transition-duration: 0.4s;
+        border-radius: 4px;
+    }
+    div.content {
+        margin-top: 0px;
+        margin-left: 25px;
+        margin-right: 10px;
+    }
+    div.body {
+        margin-top: 20px;
+    }
+    .footer {
+        border: none;
+        border-top: solid var(--border-main);
+    }
+    .pagination li a {
+        text-decoration: none;
+        color: #000;
+        padding: 8px 22px;
+    }
+}
+
+@media (max-width: 450px){
+    body {
+        background-color: var(--bg-col);
+        
+    }
+    div.cont{
+        margin: 40px 40px 40px;
+    }
+}
+@media (min-width: 449px){
+    html{
+        background-color: var(--fd-col);
+    }
+    body{
+        background-repeat: no-repeat;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(var(--fd-col)), to(var(--bg-col)));
+        background-image: -moz-linear-gradient(var(--grad), var(--fd-col), var(--bg-col));
+        background-image: -o-linear-gradient(var(--grad), var(--fd-col), var(--bg-col));
+        background-image: linear-gradient(var(--grad), var(--fd-col), var(--bg-col));
+        background-attachment: fixed;
+    }
+}
+
+/* For minimum 400px */
+@media (min-width : 400px){
+    .vanishbr{
+        display: none;
+    }
+}
+
+/* For maximum 440px */
+
+@media (max-width : 440px){
+    .pagination li a {
+        text-decoration: none;
+        color: #000;
+        padding: 8px 8px;
+    }
+}
+
+/* For maximum 350px */
+
+@media (max-width:350px) {
+    .pageLink{
+        height: 40px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 1px;
+    }
+    #home, #search, #add {
+        padding: auto;
+    }
+    #viewall {
+        padding: 5px;
+    }
+}
+
+/* Hover and Focus Properties */
+
+.pageLink:hover, .botm:hover, .pageLink:focus, .botm:focus {
+    background-color: var(--fd-col);
+    color: var(--border-main);
+    border-color: var(--border-main);
+}
+
+.but:hover, input[type=submit]:hover, input[type=reset]:hover, input[type=submit]:focus, input[type=reset]:focus, .but:focus {
+    background-color: var(--fd-col);
+    color: var(--txt-con);
+    border-color: var(--txt-con);
+}
+
+.currentPage:hover, .currentPage:focus {
+    animation: none;
+    -webkit-animation: none;
+    -o-animation: none;
+    -moz-animation: none;
+    -moz-animation: none;
+}
+
+.pageLink:focus, .botm:focus, .currentPage:focus, input[type=submit]:focus, .but:focus, input[type=reset]:focus {
+    outline: thin solid;
+    outline-color: var(--bg-col);
+}
+
+input[type=text]:focus, input[type=url]:focus, input[type=password]:focus, textarea:focus {
+    outline: thin solid;
+    outline-color: var(--bg-col);
+}
+ 
+/* displayCopy */
+.displayCopy {
+    font-size: 12px;
+}
+
+/* Pagination */
+.paginationContainer {
+    display: block;
+    
+    width: auto;
+    min-width: 80%;
+    padding: auto;
+    margin: 0;
+    justify-self: center;
+    
+
+}
+.pagination {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border-radius: 20px;
+    padding: 100px;
+    box-sizing: border-box;
+    padding: 0;
+    border: var(--fd-col) thin solid;
+    margin: 20px 0px;
+    width: 100%;
+    height: 25px;
+    max-width: 500px;
+    justify-self: center;
+    overflow: hidden;
+}
+  
+.pagination li {
+    color: black;
+    float: left;
+    list-style: none;
+    padding: 0;
+    padding-top: 2px; 
+    padding-left: 4px;
+    padding-right: 4px; 
+    margin: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 18px;
+}
+
+.pagination li.active{
+    background-color: var(--bg-col);
+    color: white;
+    
+}
+
+.pagination li.active a {
+    color: white;
+}
+  
+.pagination li:hover:not(.active) a
+{
+    color: var(--bg-col);
+}
+
+  /* Disable class */
+
+  .disabled{
+      display: none;
+  }
+
+  /* 000webhost hide */
+
+  img[alt="www.000webhost.com"] { 
+      display: none; 
+    }
