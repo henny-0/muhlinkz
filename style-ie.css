@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Compatibility CSS for IE */
 
 body {
@@ -213,4 +214,221 @@ input[type=text]:focus, input[type=url]:focus, input[type=password]:focus {
 .pagination li:hover:not(.active) a
 {
     color: #ff00aa;
+=======
+/* Compatibility CSS for IE */
+
+body {
+    background-color: #ff00aa;
+}
+
+p.head {
+    color: #c22bfd;
+    text-shadow: -1px 1px #000, 1px -1px #000, 1px 1px #000, -1px -1px #000, 3px 3px #fff;
+}
+
+.nav {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-color: #c22bfd;
+    border: solid #000;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    margin-top: 0;
+    padding: 2px;
+}
+
+.results {
+    border: solid #c22bfd;
+}
+
+.footer {
+    background-color: #c22bfd;
+    border-top: solid #000;
+}
+
+.footer::after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.botm {
+    background-color: #ff00aa;
+    border: #fff solid thin;
+    color: #fff;
+}
+
+.pageLink {
+    background-color: #ff00aa;
+    color: #fff;
+}
+
+@keyframes link {
+    0% {
+        background-color: #ff00aa;
+        color: #fff;
+        border-color: #fff;
+    }
+    25% {
+        background-color: #ff00aa;
+        color: #000;
+        border-color: #000;
+    }
+    50% {
+        background-color: #c22bfd;
+        color: #fff;
+        border-color: #fff;
+    }
+    75% {
+        background-color: #c22bfd;
+        color: #000;
+        border-color: #000;
+    }
+    100% {
+        background-color: #ff00aa;
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+div.content {
+    background-color: #fee;
+    color: #101;
+    border: solid #c22bfd;
+    box-shadow: 2px 2px #000, -2px -2px #000, -2px 2px #000, 2px -2px #000;
+}
+
+div.cont {
+    background-color: #fee;
+    color: #101;
+    border: solid #c22bfd;
+    box-shadow: 2px 2px #000, -2px -2px #000, -2px 2px #000, 2px -2px #000;
+}
+
+input[type=text], input[type=url], input[type=password], select {
+    border: 1px solid #101;
+}
+
+input[type=submit], input[type=reset] {
+    background-color: #ff00aa;
+    color: #fee;
+    border: 1px solid #fee;
+}
+
+.but {
+    background-color: #ff00aa;
+    border: solid thin #fee;
+    color: #fee;
+}
+
+.but:hover, input[type=submit]:hover, input[type=submit]:focus, input[type=reset]:focus, input[type=reset]:hover, .but:focus {
+    background-color: #c22bfd;
+    color: #101;
+    border-color: #101;
+}
+
+#notif, #table-notif {
+    color: red;
+}
+
+@media (min-width:602px) {
+    div.body {
+        flex-direction: row;
+    }
+    div.nav {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        border: solid #000;
+        border-left: none;
+        border-radius: 0;   
+        height: 100%;
+        width: 110px;
+    }
+    .pageLink {
+        border: solid thin;
+        color: #fff;
+        height: 40px;
+        width: 85px;
+        padding: 10px 4px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 10px;
+        transition-duration: 0.4s;
+        border-radius: 4px;
+    }
+    div.content {
+        margin-top: 0px;
+        margin-left: 130px;
+        margin-right: 10px;
+    }
+    div.body {
+        margin-top: 20px;
+    }
+    .footer {
+        border: none;
+        border-top: solid #000;
+    }
+}
+
+@media (max-width:602.0000001px) {
+    p.head {
+        margin-top: 60px;
+    }
+}
+
+.pageLink:hover, .botm:hover, .currentPage:hover, .pageLink:focus, .botm:focus, .currentPage:focus {
+    background-color: #c22bfd;
+    color: #000;
+    border-color: #000;
+}
+
+.pageLink:focus, .botm:focus, .currentPage:focus, input[type=submit]:focus, input[type=reset]:focus, .but:focus {
+    outline-color: #ff00aa;
+}
+
+input[type=text]:focus, input[type=url]:focus, input[type=password]:focus {
+    outline-color: #ff00aa;
+}
+
+.pagination {
+    border: #c22bfd thin solid;
+}
+  
+
+.pagination li.active{
+    background-color: #ff00aa;  
+}
+
+/* input[type=color]{
+    width: 75%;
+    height: auto;
+    max-width: 250px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+} */
+
+.pagination li:hover:not(.active) a
+{
+    color: #ff00aa;
+>>>>>>> Stashed changes
 }
